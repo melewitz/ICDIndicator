@@ -1,0 +1,457 @@
+global name 'BoundaryTracker' is not definedglobal name 'Diagram' is not definedglobal name 'RegionFactory' is not definedglobal name 'ordered' is not definedlocal variable 'region1' referenced before assignmentlocal variable 'region2' referenced before assignmentlocal variable 'spans' referenced before assignmentlocal variable 'new_span' referenced before assignmentlocal variable 'new_spans' referenced before assignmentlocal variable 'touched_boundaries' referenced before assignmentlocal variable 'boundary_name' referenced before assignmentlocal variable 'self' referenced before assignmentglobal name 'Span' is not definedlocal variable 'last_span' referenced before assignmentlocal variable 'span' referenced before assignmentlocal variable 'name' referenced before assignmentlocal variable 'region_tuples' referenced before assignmentlocal variable 'node' referenced before assignmentlocal variable 'node1' referenced before assignmentlocal variable 'node2' referenced before assignmentlocal variable 'regions' referenced before assignmentlocal variable 'region' referenced before assignmentlocal variable 'result' referenced before assignmentlocal variable 'span_loop' referenced before assignmentlocal variable 'unused_spans' referenced before assignmentlocal variable 'node_complement' referenced before assignmentlocal variable 'diagram' referenced before assignmentlocal variable 'terminal_node' referenced before assignmentlocal variable 'spans_by_region' referenced before assignmentlocal variable 'region_spans' referenced before assignmentglobal name 'Chord' is not definedlocal variable 'initial_span' referenced before assignmentlocal variable 'chord_forms_loop' referenced before assignmentlocal variable 'start_node' referenced before assignmentlocal variable 'final_node' referenced before assignmentlocal variable 'boundaries' referenced before assignmentlocal variable 'bounding_spans' referenced before assignmentglobal name 'deepcopy' is not definedlocal variable 'boundaries_copy' referenced before assignmentlocal variable 'locator' referenced before assignmentlocal variable 'region_count_before' referenced before assignmentlocal variable 'max_node' referenced before assignmentlocal variable 'indent' referenced before assignmentlocal variable 'new_boundaries' referenced before assignmentlocal variable 'region_boundaries' referenced before assignmentlocal variable 'base_region' referenced before assignmentlocal variable 'chord' referenced before assignmentlocal variable 'inside_region' referenced before assignmentlocal variable 'high_end_span' referenced before assignmentlocal variable 'diag_max_node' referenced before assignmentlocal variable 'bound_str' referenced before assignmentlocal variable 'factor' referenced before assignmentlocal variable 'nodes_set' referenced before assignmentlocal variable 'i' referenced before assignmentlocal variable 'node_map' referenced before assignmentlocal variable 'sparse_diagram' referenced before assignmentlocal variable 'chords' referenced before assignmentlocal variable 'chords_to_remove' referenced before assignmentlocal variable 'new_region' referenced before assignmentglobal name 'time' is not definedlocal variable 'key' referenced before assignmentlocal variable 'keybuffer' referenced before assignmentlocal variable 'get_value' referenced before assignmentlocal variable 'mask' referenced before assignmentlocal variable 'bits' referenced before assignmentlocal variable 'val' referenced before assignmentglobal name 'ceil' is not definedglobal name 'log' is not definedlocal variable 'header' referenced before assignmentlocal variable 'n_chords' referenced before assignmentlocal variable 'diag_fmt' referenced before assignmentlocal variable 'header_values' referenced before assignmentglobal name 'sys' is not definedlocal variable 'header_d' referenced before assignmentglobal name 'timestamp' is not definedlocal variable 'f_in' referenced before assignmentglobal name '_parse_header' is not definedlocal variable 'exc' referenced before assignmentlocal variable 'count' referenced before assignmentlocal variable 'diag_fmt_key' referenced before assignmentglobal name 'key_to_diagram' is not definedlocal variable 'diag_str' referenced before assignmentlocal variable 'diag' referenced before assignmentlocal variable 'blocksize' referenced before assignmentlocal variable 'block_item' referenced before assignmentglobal name 'load_diagrams_from_file' is not definedlocal variable 'block_index' referenced before assignmentname 'gen_possible_diagrams_recursive' is not definedglobal name 'adjacent' is not definedlocal variable 'endpoint_count' referenced before assignmentlocal variable 'chord_by_node' referenced before assignmentlocal variable 'n_nodes' referenced before assignmentlocal variable 'chords_seen' referenced before assignmentlocal variable 'chord1' referenced before assignmentlocal variable 'chord2' referenced before assignmentglobal name 'get_other_node' is not definedlocal variable 'two_moves' referenced before assignmentglobal name 'itertools' is not definedlocal variable 'a' referenced before assignmentlocal variable 'c' referenced before assignmentlocal variable 'n' referenced before assignmentlocal variable 'b' referenced before assignmentlocal variable 'adj' referenced before assignmentlocal variable 'chord_count' referenced before assignmentlocal variable 'ep_list' referenced before assignmentglobal name 'error' is not definedlocal variable 'endpoint_list' referenced before assignmentlocal variable 'chord_list' referenced before assignmentglobal name 'get_possible_chords' is not definedlocal variable 'level' referenced before assignmentlocal variable 'level_chord_used' referenced before assignmentlocal variable 'print_status' referenced before assignmentlocal variable 'skipped' referenced before assignmentlocal variable 'move_down_level' referenced before assignmentlocal variable 'level_chord_added' referenced before assignmentlocal variable 'used_nodes' referenced before assignmentlocal variable 'move_up_level' referenced before assignmentlocal variable 'level_indexes' referenced before assignmentglobal name '_add_chords_to_diag' is not definedglobal name 'get_compressed_diagram' is not definedglobal name 'diagram_to_key' is not definedlocal variable 'bits_per_node' referenced before assignmentlocal variable 'unique_diagrams' referenced before assignmentglobal name 'get_rotated_diagram' is not definedlocal variable 'compressed_diag' referenced before assignmentlocal variable 'ep1' referenced before assignmentlocal variable 'current_used_eps' referenced before assignmentlocal variable 'ep2' referenced before assignmentlocal variable 'current_diagram' referenced before assignmentlocal variable 'possible_chords' referenced before assignmentlocal variable 'used_chord_from_level' referenced before assignmentlocal variable 'partial_diagram' referenced before assignmentlocal variable 'used_eps' referenced before assignmentlocal variable 'rots' referenced before assignmentglobal name 'get_sorted_diagram' is not definedlocal variable 'endpoints_set' referenced before assignmentlocal variable 'ep_map' referenced before assignmentlocal variable 'diag1' referenced before assignmentlocal variable 'diag2' referenced before assignmentglobal name 'equal_diagrams' is not definedglobal name 'get_scaled_diagram' is not definedglobal name 'contains_one_move' is not definedglobal name 'contains_two_move' is not definedglobal name 'contains_three_move' is not definedlocal variable 'scaled_diag' referenced before assignmentlocal variable 'invariant_chords' referenced before assignmentlocal variable 'ext_chord' referenced before assignmentglobal name 'get_symetric_diagram' is not definedglobal name 'equal_rotated_diagrams' is not definedlocal variable 'inner_diag' referenced before assignmentlocal variable 'i_ep_info' referenced before assignmentlocal variable 'odiag' referenced before assignmentlocal variable 'o_ep_info' referenced before assignmentglobal name '_do_fits_into' is not definedlocal variable 'skipable' referenced before assignmentlocal variable 'inner_next' referenced before assignmentlocal variable 'outer_next' referenced before assignmentlocal variable 'i_matched' referenced before assignmentlocal variable 'o_matched' referenced before assignmentlocal variable 'idiag' referenced before assignmentlocal variable 'scale' referenced before assignmentglobal name 'gen_possible_diagrams' is not definedglobal name 'get_invariant_chords_for_diagram' is not definedname 'main' is not definedglobal name 'cpu_count' is not definedglobal name 'Pool' is not definedglobal name 'check_123_planarable' is not definedlocal variable 'match' referenced before assignmentglobal name 'getopt' is not definedglobal name 'usage' is not definedlocal variable 'progname' referenced before assignmentlocal variable 'opts' referenced before assignmentlocal variable 'opt' referenced before assignmentlocal variable 'arg' referenced before assignmentlocal variable 'diag_strs' referenced before assignmentlocal variable 'diag_files' referenced before assignmentlocal variable 'diagrams' referenced before assignmentglobal name 'get_diag_from_gen_all' is not definedglobal name 'get_diags_from_file' is not definedglobal name 'diag_fmt_key' is not definedglobal name 'gen_all_123free_planarable_diags' is not definedlocal variable 'diag_gen' referenced before assignment__path__ChordDiagram/Users/melewitz/ICDIndicator/ChordDiagram/__init__.pypairturnval_aval_b<lambda>__str__iterkeysregion1_region2_regions1regions2iteritemsregionsettemp_span__iteratordifferenceold_regionsetdefaultfinal_chordnode_regionbase_regionsintersectionmatch_regionresult_spanssorted_spansexisting_spanintersectionsvisited_nodesconnector_spannew_final_nodesorted_regionsspans_to_checkupdate_regionscomplement_nodemin_node_closedname_to_regionsnode_forms_loopget_region_countis_span_on_regionnew_boundary_name_gen_region_boundscomplement_regionslast_region_closedget_spans_from_nodelowest_intersectioncomplement_boundariesfinal_node_complementget_regions_for_nodesorder_spans_in_closed_loopvalidate_all_regions_closedReturns the region containing the lowest nodes that have not
+           been crossed.
+
+           Args:
+               diagram: Source diagram for self/boundaries.
+           Returns:
+               Returns the region containing the lowest nodes that have not
+                 been crossed.
+           Raises:
+               Assert: Internal error: Wrong number of base regions"
+               Assert: Internal error: Needs investigation.
+        Return True if the chord containing node forms a closed loop with
+           no other intersections along the loop.  Note that the loop can have
+           length greater than one.
+
+           Args
+               node: Node to check
+               diagram: Diagram represented by self/boundaries.
+           Returns:
+               Returns True if the chord forms a loop where any other nodes on
+               the loop are not yet intersected.
+           Raises:
+               None
+        Internal error: Unexpected sorted_regions length: %s/Users/melewitz/ICDIndicator/ChordDiagram/BoundaryTracker.pyVerify that spans can be arranged to form a closed region (loop)
+             where nodes of adjacent spans are either equal or complements.
+           Return ordered set of spans or None (if they're not a closed loop)
+
+           Args:
+               spans: List of Spans to verify.
+               diagram: Source diagram for spans.
+           Returns:
+               Returns the list of spans in adjacency order.
+           Raises:
+               None
+        Yields a list of possible boundaries for the new region, including
+             initial_span.
+           Concept: For both the high and low nodes of the initial span, walk
+             all adjacent spans until either the opposite end of the initial
+             span is found, or its complement is found.
+
+            Args:
+                initial_span: Newly added span that created region 'region'.
+                max_node: Highest node in diagram that's been added to
+                          boundaries.
+                locator: Region containing locator prior to adding initial_span
+                new_region: Region created by adding span initial_span.
+                diagram: Source diagram for boundaries
+            Yields:
+                All viable boundaries to form the new region.  Each yielded
+                boundary is a list of bounding spans, starting with
+                initial_span.
+            Raises:
+                None
+        Returns the canonical boundary name for specified regions
+
+           Args:
+               region1, region2: Region IDs to combine into a name
+           Returns:
+               A name for the boundary along both region1 and region2.
+           Raises:
+               None
+        Return true if node is within or on border of specified regionReturn the number of defined regions
+
+           Args:
+               None
+           Returns:
+               Returns the number of defined regions
+           Raises:
+               None
+        BoundaryTracker constructor
+
+           Args:
+               None
+           Returns:
+               Returns a new BoundaryTracker object
+           Raises:
+               None
+        Return regions list from span containing nodes
+
+           Args:
+               node1, node2: Nodes for comparison
+           Returns:
+               Returns the pair of regions along the span containing both nodes
+           Raises:
+               Exception: No boundary found containing nodes
+        Add new boundary span and note intersection if chord is specified
+
+           Args:
+               new_span: Span whose boundary has changed
+               region1, region2: Regions on the sides of new_span
+               chord (optional): Chord marking a new intersection.  Typically,
+                                 passed only for the first span on a new region.
+           Returns:
+               None
+           Raises:
+               None
+        Return a tuple containing the two parameters in sorted order
+       Args:
+           a, b: The two values to be returned in the ordered tuple.
+       Returns:
+           Tuple containing a & b in sorted order,
+       Raises:
+           None
+    Wrong number of base regions #2update_regions(%s, old=%s, new=%s): Region '%s' not foundUpdate the region on span, replacing old_region with new_region
+
+           Args:
+               span: Span for boundary update
+               old_region: Region to be replaced
+               new_region: Replacement region
+           Returns:
+               Returns a region list of resulting regions along specified span
+           Raises:
+               Exception: Region not found
+        Tracks boundary info
+
+       A boundary is a region pair plus the list of spans along that boundary.
+       The boundary name is a conjunction of the region names from each side of
+         the span.
+    %s: %sUpdate regions along spans above the top intersection, and below
+             the lowest intersection that does not form a loop without
+             additional intersections.
+           In other words, unallocated spans at the high end are marked to be
+             in the new locator region.  Spans at the low end, from the base
+             up past any loops with no other intersections are marked to be in
+             the new base region.
+
+           Args:
+               locator: The new locator region after the last span was added.
+               diagram: Source diagram for the current boundaries.
+           Returns:
+               None
+           Raises:
+               assert: Internal error: Unexpected sorted regions length.
+
+        Internal error: Wrong number of base regions #1Return True if any boundary contains specified span on specified region
+
+           Args:
+               match_region: Region for comparison
+           Returns:
+               Returns True if boundary is found matching both region and span.
+               Otherwise, return False.
+           Raises:
+               None
+        Return list of region tuples matching node. Else return None.
+           Note: At an intersection, 4 possible spans can each contain node.
+
+           Args:
+               node: Node for comparison
+           Returns:
+               Returns a list of region tuples, the region pairs on each span
+               containing specified node.
+           Raises:
+               Exception: No boundary found containing node
+
+        Return the string format of the BoundaryTracker objectReturns the list of boundary spans between the specified regions.
+           An empty list is returned if no spans exist on specified regions.
+
+           Args:
+               region1, region2: Regions on boundary of interest
+           Returns:
+               Returns the list of spans on the specified boundary.
+           Raises:
+               None
+        Internal error: Base and complement regions not equal - verify diagram is validget_regions_for_node: No boundary found containing node: %sVerify that spans on each region boundary form a closed loop
+
+           Args:
+               diagram: Source diagram for self/boundaries
+           Returns:
+               Returns True if all regions are closed, otherwise returns False
+           Raises:
+               None
+        Return up to two spans emanating from the intersection at node.
+           Spans returned are either parallel or perpendicular to span
+             containing node, as controlled by the argument: turn.
+             Parallel spans: (node, node +/- 1)
+             Perpendicular spans: (node_complement, node_comp +/- 1)
+           Filter out spans with a node less than 1 or greater than
+              last_assigned_node (high node so far in diagram)
+
+           Args:
+               node: Node for comparison
+               diagram: Diagram for chord (node complement) info
+               max_node: Highest valued node crossed at this point
+               turn: When "turn" is True, perpendicular spans
+                     are returned, else, parallel spans are returned.
+               indent: Useful for debug output
+           Returns:
+               Returns up to two spans coming out of the intersection at span,
+                 in the direction specified by the argument 'turn'.
+           Raises:
+               None
+        Returns the region IDs that comprise the boundary name
+
+           Args:
+               name: Boundary name
+           Returns:
+               Returns the two region IDs for specified boundary name
+           Raises:
+               None
+        No regions found for span %s.
+ boundaries: %sBoundaryTracker: No boundary found containing nodes: %s, %sGiven the initial bounding_spans working toward a full boundary for
+             region, _gen_region_bounds attempts to close the region using each
+             potential span from the current node, and recursively calling
+             itself to complete the search for all possible boundaries around
+             region.
+           Recursion is used to allow backtracking, so that spans in each
+             direction from node can be checked, going all around the boundary.
+           gen_region_bounds sets up the recursion for this internal method.
+
+           Args:
+               node: The end node of the most recent span added to
+                     bounding_spans.  It's the current node from which new spans
+                     will be considered for addition.
+               bounding_spans: The list of spans comprising the region boundary
+                               under consideration.
+               visited_nodes: A set containing all nodes used by spans in
+                              bounding_spans.
+               locator: Region containing the locator prior to adding new span.
+               new_region: Region created by adding new span.
+               diagram: The Diagram represented by self/boundaries.
+               max_node: Highest node in diagram that's been added to
+                         boundaries.
+               final_node: The starting node (or its complement) of the first
+                           span in bounding spans. When this node is reached,
+                           a new region boundary has been found.
+               indent: Number of spaces to indent debug output to aid in
+                       readability.
+        (   t   selft   nodet   bounding_spanst   visited_nodest   locatort
+   new_regiont   diagramt   max_nodet
+   final_nodet   indentt   node_complementt   region_boundariest   new_boundariest   turnt   spans_to_checkt   spant   st   boundaries_copyt   region_count_beforet	   temp_spant   final_node_complementt   new_final_nodenode_pairChordDiagram.ChordReturns the node that was not specified.
+
+           Args:
+               node: The node that is not to be returned.
+           Returns:
+               Returns the node not specified.
+           Raises:
+               Exception: Node not found in chord.
+        Construct a Chord from an node list, tuple or another Chord
+
+           Args:
+               node_pair: The pair of nodes the comprise an intersection.
+           Returns:
+               Returns a new Chord object
+           Raises:
+               None
+        Node {} not found in chord{}/Users/melewitz/ICDIndicator/ChordDiagram/Chord.pyReturn the larger of the chord's two nodes.
+           Always equivalent to chord[1].
+
+           Args:
+               None
+           Returns:
+               Returns the larger of the chord's two nodes.
+           Raises:
+               None
+        Return the smaller of the chord's two nodes.
+           Always equivalent to chord[0].
+
+           Args:
+               None
+           Returns:
+               Returns the smaller of the chord's two nodes.
+           Raises:
+               None
+        Returns the number of unit length spans between the chord's nodes.
+
+           Args:
+               None
+           Returns:
+               Returns the length of the chord.
+           Raises:
+               None
+        Represents the intersection of two nodes
+       A Chord allows indexed access to the nodes, which are always sorted.
+       While the implementation is similar to Span, conceptually they are
+         different.  A Chord is the intersection of two nodes.  A span is the
+         segment(s) between two or more nodes.
+    outsidebound_spans_is_planarablechords_by_noderemove_one_movesget_span_complementinit_from_chord_listget_post_intersection_regionReturn region after crossing an intersection, i.e. locator region.
+           Finds the region on a span through node that includes new_region
+             and returns the opposite region.
+        Renumber nodes, removing node numbers that are not used in a chord/Users/melewitz/ICDIndicator/ChordDiagram/Diagram.pyRepresents the chord list definition of a planar diagramEach span node is the node of a chord.
+           Return the span comprised of the opposite node of each end's chord.
+        Delete any 1-move chords and compress the diagram to ensure
+             contiguous nodes
+           Removing a 1-move can create a new 1-move.  So iterate until all
+             all 1-moves are removed.
+        Return the opposite end of the chord containing specified nodeReturn True if the diagram is planarableNo post intersection region determinedInvalid diagram.  Missing node: {}Returns the number of chords in the diagramToo many chords.  Chord limit: %sReturn the chord containing the specified nodeScale all nodes by factor to allow for additional chordsregion_idreset_region_idget_region_afterget_last_region_idlast_assinged_region_idReturn last assigned region, or None if no regions assigned yet.
+
+           Args:
+               None
+           Returns:
+               Returns last assigned region, or None if no regions assigned yet
+           Raises:
+               None
+        Starts region numbering over at the beginning, so that the next
+           region to be returned will be outside.
+
+           Args:
+               None
+           Returns:
+               None
+           Raises:
+               None
+        Return region_id after last_assigned_region_id
+
+           Args:
+               None
+           Returns:
+               Returns region after last assigned region.
+           Raises:
+               Exception: No more region identifiers.
+        ChordDiagram.RegionFactoryStatic method that returns the 1st region id, i.e. outside
+
+           Args:
+               None
+           Returns:
+               Returns the first region ID.  Used as outside region.
+           Raises:
+               None
+        The RegionFactory class assigns region IDs
+       First region id is always @ (outside)
+       Subsequent ids are A-Z
+       TODO: Allow more than 27 regions (@,A-Z)
+    Return region after specified region
+           Note: Regions currently limited to [outside, 'A'..'Z']
+
+           Args:
+               region_id: Specified region
+           Returns:
+               Returns region after specified region
+           Raises:
+               Exception: No more region identifiers.
+        /Users/melewitz/ICDIndicator/ChordDiagram/RegionFactory.pyRegionFactory constructor
+
+           Args:
+               None
+           Returns:
+               A new RegionFactory object
+           Throws:
+               None
+        Return the span node not matching the specified node
+
+           Args:
+               node: Int specifying node not to be returned
+           Returns:
+               Return the node not matching the specified node
+           Raises:
+               Exception: original node not found in span
+        Return the high valued node of the span
+
+           Args:
+               None
+           Returns:
+               Return the high valued node of the span
+           Raises:
+               None
+        ChordDiagram.SpanReturn True if self entirely contains specified span
+
+           Args:
+               span: Span for comparison
+           Returns:
+               Returns True if self contains or equals specified span
+           Raises:
+               None
+        Return the length of the span, i.e. number nodes along the span minus 1
+
+           Args:
+               None
+           Returns:
+               Returns the difference between the high and low nodes.
+           Raises:
+               None
+        Represents a segment of a planar diagram between nodes.
+       An ordered pair of nodes - the end points of the span
+       While the implementation is similar to Chord, conceptually they are
+         different.  A Chord is the intersection of two nodes.  A Span is the
+         segment(s) between two or more nodes.
+    Return remaining portions(s) of self after removing span
+           Always returns a span list.  Removing the middle of an existing span
+             results in two distinct spans
+           Endpoint nodes of subtracted span are not removed
+
+           Args:
+               span: Segment to remove from self
+           Returns:
+               Returns a list of 1 or 2 remaining spans
+           Raises:
+               None
+        Return the low valued node of the span
+
+           Args:
+               None
+           Returns:
+               Return the low valued node of the span
+           Raises:
+               None
+        /Users/melewitz/ICDIndicator/ChordDiagram/Span.pyNode {} not found in span{}Constructor - Ensure ordering of node pair
+           Valid forms:  Span(list), Span(int, int)
+           Original node order is saved as: (first, last)
+           Nodes of list are kept in sorted order
+
+           Args:
+               node1: int, tuple or list
+               node2: Must be an in if node1 is an int
+                      Ignored when node1 is tuple or list
+           Returns:
+               A new Span
+           Raises:
+               None
+
+        Return True if node is on self's span
+
+           Args:
+               node: Node for comparison
+           Returns:
+               Returns True if self.low <= node <= self.high
+           Raises:
+               None
+        dictstdinUtilityfilenamereadlinefilenamesstart_countprint_headerstatus_diagramsload_diagrams_from_files/Users/melewitz/ICDIndicator/ChordDiagram/Utility.pyMissing 'bits: <val>' in header or invalid positive integer foundInvalid diagram:format: {}Missing 'chords: <val>' in header or invalid positive integer foundFile header must be 'name: value'... form:%m/%d/%Y %H:%M:%S{} Diagrams: {:,}{} Completed Loading Diagrams: {:,}Processing item {} within each {} item blockHeader missing 'format {key|string}.  Default to format: key{} Start loading diagrams from file: {}Invalid header:Invalid block item for block size {:,}: {:,}chords: {} bits: {}writefilterdoPrintdoScaletriplesdiag_keydofilterrotationrotationstop_levelouter_diagchord_indexinner_chordchord_lengthcombinationslevel_chordsmirror_diag1display_movesextended_diagget_chord_keyget_two_movesdiagram_filterapply_two_moveslevel_chords_lenfits_into_diagrampossible_chord_rowpossible_ext_chordsis_realizable_diagram_add_chords_to_diag_mpequal_symetric_diagramscheck_diagram_invariancegen_all_diagram_rotationsgen_possible_diagrams_iterative{} Generated diagrams: {:,}  Skipped: {:,}one:%s	two:%s	three:%sget_possible_diagrams: Rotation filtering not yet implemented in iterative versionMatch remaining portion if idiag into odiag{} Start generating diagrams-- no qualifying diagrams --Return true if diagram contains a two-move.
+       i.e. if any two chords have adjacent nodesReturns True if diag1 == diag2.  i.e. same chords, any order For ep_list=(1, 2, 3, 4), return list of lists like:
+        [ [(1,2), (1,3), (1,4)],
+                 [(2,3), (2,4)],
+                        [(3,4)] ]
+    Return list of chord pairs that form two moves.
+       i.e. if any two chords have adjacent nodesext chord:Node {} not found in chord {}scaled diag:Returns the distance between the chord endpoints
+       Size is the number of endpoints in the diagram
+       Chord length is never over 1/2 the number endpoints as it's
+         then shorter to go the other way around the diagram.
+    Return true if diagram contains a one-move.
+       i.e. if the endpoints of any chord are adjacentAdd chord to diagram and return True if no 1, 2, or 3 moves are found
+       Assumes input diagram is already scaled, doesn't check for endpoint conflictsReturns True if the mirror image of diag1 equals any rotation of diag2Scale all endpoints by factor to allow for additional chords{} Done generating diagrams. Count: {:,}  Skipped: {:,}/Users/melewitz/ICDIndicator/ICDIndicator.pyget_possible_chords expects exactly one of: chord_count or ep_listReturns True if inner_diag fits into outer_diagReturns the mirror image diagramReturn True if chord diagram can be drawn as a plane diagram
+       Diagram cannot be drawn if any chord has even length
+       Chord length is even if both endpoints are even or both are odd
+    Return true if diagram contains a one-move.
+       i.e. if three cords form an adjacency loop - our put another way:
+       each chord endpoint is adjacent to another chord's endpoint to form a
+       closed loop containing three chords.Generate extension chords to test in each diagram
+       Extensions use only odd endpoints
+       Diagram will use only even endpoints - ensures no collisions
+
+       Prototype for diagram filter:
+         filter(orig_sparse_diag, extension_chord, extended_sparse_diag)
+    (   t   n_chordst   possible_chordst   filter_rotationst   filtert   print_statust   levelt   level_indexest   level_chord_addedt   level_chord_usedt	   top_levelt   diagramt
+   used_nodest   move_up_levelt   move_down_levelt	   add_chordt   countt   skippedt   level_chordst   level_chords_lent   chord_indext   chordrvCPUsargsargvfindimappool<module>usage_msgGetoptErrordiag_node_listmultiprocessingiterator_chunk_sizediag_possible_chordsError: Options -n and -d are mutually exclusivehn:d:Error: Invalid diagram:No diag_gen found../123free_planarables.pyPlanarable:Error: Option '-n' or '-d' must be specifiedUsing {} of {} CPUsProcess command line arguments and kick things off{}: {}Processing all {}-chord diagrams
+For each diagram requested, display the list of chords that add no 1, 2, or 3
+moves, and the combinations of these chords that extend the original diagram
+without adding any 1 or 3 moves and result in a planarable diagram.
+
+-n <nchords>: Requests testing of all diagrams with the specified chord count.
+              Not valid in combination with "-d".
+
+-d '<diag>':  Requests testing of the specified diagram.  Note that this option
+              can be specified any number of times.  Not valid in combination
+              with "-n" option.
+
+  usage: %s {-n <nchords> | -d '<diag>'}
+
+%m-%d-%Y %H:%M:%S/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python<string>ChordDiagram.BoundaryTrackerChordDiagram.Utility 	ChordDiagram.DiagramMAX_NODE_LIMIT__all____builtins____class____cmp____delattr____dict____doc____enter____exit____file____getattr____import____main____metaclass____module____name____setattr__appendcompilecontains_nodecontains_spandeltaevalexc_tracebackexc_typeexc_valueget_base_regionget_chord_by_nodeget_first_region_idget_lower_nodeget_next_region_idget_node_complementget_upper_nodeinspectis_node_on_regionmathmax_node_closedopenpopregion_factoryreversesplitstaticmethodstderrstrftimestripupdate_dangling_spansxrange

@@ -1,0 +1,36 @@
+ICDIndicator programs and libaries
+
+No copyright has been assigned at this point.  The intent is make it freely 
+available for personal or research use, but not available for commercial use.
+
+Requirements:
+  Python 2.7
+  Non-preinstalled python packages:
+    multiprocessing
+  Boost (only for use of find_graph_planar.py).  Boost is freely available for
+    download at: http://www.boost.org
+
+Installation:
+  1. untar into the desired directory
+    cd <install-dir>
+    tar zxf <install-file.tgz>
+  2. Include in your PATH (details depend on your specific shell)
+    export PATH
+    PATH="$PATH:<install-dir>"
+  3. Verify installation
+    Try the following commands:
+      ICDIndicator_test.py
+      ChordDiagram_test.py
+
+Getting started:
+  To generate all 4-chord diagrams with no 1 moves:
+      gen_diagrams.py -n 4 -1
+  Take a look at the -h option on each program for functionality details.
+  Programs you might want to play with:
+    gen_diagrams.py
+    filter_moves.py
+    filter_rotations.py
+    find_planarable.py
+    find_graph_planar.py
+    find_2move_inclusions.py
+    show_invariant_chords.py

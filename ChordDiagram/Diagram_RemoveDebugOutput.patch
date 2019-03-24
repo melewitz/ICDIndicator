@@ -1,0 +1,112 @@
+diff -r 1ee37f725774 ChordDiagram/Diagram.py
+--- a/ChordDiagram/Diagram.py	Thu Mar 12 18:15:45 2015 -0500
++++ b/ChordDiagram/Diagram.py	Thu Mar 12 18:19:42 2015 -0500
+@@ -124,10 +124,8 @@
+     def is_planarable(self):
+         "Return True if the diagram is planarable"
+ 
+-#         print "Orig    diagram:", self
+         # Reduce diagram - One moves have no effect on planarability
+         self.remove_one_moves()
+-#         print "Reduced diagram:", self
+         if self.size() == 0:
+             return True # Empty diagram, original was only 1-moves
+ 
+@@ -141,23 +139,18 @@
+         return self._is_planarable(locator, boundaries)[0]
+ 
+     def _is_planarable(self, locator, boundaries, node1=1, indent=0):
+-        #print ' '*indent, "(%s)-->(%s) _is_planarable(locator=%s)" % (node1-1, node1, locator)
+ 
+         # Finished the diagram yet?
+         if node1 > self.size()*2:
+             if locator == boundaries.get_base_region(self):
+                 return (True, locator, boundaries)
+             else:
+-                #print ' '*indent, "(%s) _is_planarable: Base and final locator not in same region - doesn't work" % node1
+                 return (False, locator, boundaries)
+ 
+         chord = self.get_chord_by_node(node1)
+-        #print "\n", ' '*indent, "**Starting new chord: n=%s %s" % (node1, chord)
+         if chord.get_lower_node() == node1:
+-            #print ' '*indent, "(%s) Not an intersection, gets used later"% node1
+             result = self._is_planarable(
+                       deepcopy(locator), deepcopy(boundaries), node1+1, indent+2)
+-            #print ' '*indent, "(%s)<--(%s)_is_planarable(): %s" % (node1, node1+1, result[0])
+             return result
+ 
+         # This is the high end of the chord - use it to close a region
+@@ -166,50 +159,35 @@
+         # Is locator on boundary with node?
+         # i.e. Can it get to node without an illegal boundary crossing?
+         if not boundaries.is_node_on_region(node2, locator, self):
+-            #print ' '*indent, "(%s) Node %s is not available from locator region '%s'" % (node1, node2, locator)
+             return (False, None, None)
+ 
+         # Determine span to complete addition of current chord
+         new_region = boundaries.region_factory.get_next_region_id()
+-        #print ' '*indent, "(%s) new region: %s" % (node1, new_region)
+         if node2 > boundaries.max_node_closed: # It's a 1-move if both nodes > any used
+             # It's a 1-move loop - new span is the chord itself
+             span = Span(chord)
+-            #print ' '*indent, "(%s) It's a 1-move loop  last_node=%s  node2=%s" % (node1, boundaries.max_node_closed, node2)
+             # Add span to connect loop to existing diagram
+             if boundaries.max_node_closed > 0: # Any existing diagram?
+-                #print ' '*indent, "(%s) _is_planarable: Adding boundary %s_%s for span %s "\
+-#                       "(connect loop to existing diagram)" \
+-#                       % (node1, locator, locator, Span(boundaries.max_node_closed, node2))
+                 boundaries.add(Span(boundaries.max_node_closed, node2), locator, locator)
+ 
+             # Add boundary: new_region in loop vs current region outside
+-            #print ' '*indent, "(%s) _is_planarable: Adding boundary %s_%s for span %s" % (node1, locator, new_region, span)
+             boundaries.add(span, locator, new_region, chord)
+ 
+             # Update regions on lowest unused and highest unused nodes
+             boundaries.update_dangling_spans(locator, self)
+-            #print ' '*indent, "(%s) _is_planarable: LOCATOR: %s" % (node1, locator), " BASE REGION:", boundaries.get_base_region(self)
+-            #print boundaries
+ 
+             result = self._is_planarable(
+                       deepcopy(locator), deepcopy(boundaries), node1+1, indent+2)
+-            #print ' '*indent, "(%s)<--(%s)_is_planarable(): %s" % (node1, node1+1, result[0])
+             return result
+ 
+         else:
+             span = Span(boundaries.max_node_closed, node1) # From last to high node
+-#                 #print "Got span %s for chord %s" % (span, chord)
+             # Add new span as a boundary between current region and new region
+-            #print ' '*indent, "(%s) Adding boundary %s_%s for span %s" % (node1, locator, new_region, span)
+             boundaries.add(span, locator, new_region, chord)
+ 
+             # Determine spans that close the new region
+-#             loop_count = 0
+             for (boundaries, bound_spans) in boundaries.gen_region_bounds(
+                  span, span.high(), locator, new_region, self, indent=indent+2):
+-#                 loop_count += 1
+-                #print ' '*indent, "(%s) _is_planarable Solution %s bound_spans: %s" % (node1, loop_count, bound_spans)
+ 
+                 # Update locator to new region after (node1,node2) crossing
+                 locator = self.get_post_intersection_region(
+@@ -217,22 +195,10 @@
+ 
+                 # Update regions on lowest unused and highest unused nodes
+                 boundaries.update_dangling_spans(locator, self)
+-                #print boundaries
+-
+-                #print ' '*indent, "(%s) _is_planarable: LOCATOR: %s  BASE_REGION: %s" % (node1, locator, boundaries.get_base_region(self))
+ 
+                 result = self._is_planarable(
+                     deepcopy(locator), deepcopy(boundaries), node1+1, indent+2)
+-                #print ' '*indent, "(%s)<--(%s)_is_planarable(): %s" % (node1, node1+1, result[0])
+                 if result[0]:
+-                    #print ' '*indent, "(%s) _is_planarable: Yes, it's planarable" % node1
+                     return result
+-#                 else: print ' '*indent, "(%s) _is_planarable: Boundary failed, more options to try?" % node1
+ 
+-            # Some failure if we got here
+-#             if loop_count == 0:
+-#                 #print ' '*indent, "(%s) <--_is_planarable: It's not planarable. Can't close region." % node1
+-#                 return (False, None, None)  # It's not planarable
+-#             else:
+-                #print ' '*indent, "(%s) <--_is_planarable: It's not planarable." % node1
+             return (False, None, None)

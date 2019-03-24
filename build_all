@@ -1,0 +1,12 @@
+cd compiled ||
+  { echo "Error: Not in ICD directory"; exit 1; }
+nuitka --recurse-all ../123free_planarables.py
+nuitka --recurse-all ../ICDIndicator_test.py
+nuitka --recurse-all ../Planarable_test.py
+nuitka --recurse-all ../cat_diagrams
+nuitka --recurse-all ../filter_moves.py
+nuitka --recurse-all ../filter_rotations
+nuitka --recurse-all ../find_2move_inclusions.py
+nuitka --recurse-all ../find_planarable.py
+nuitka --recurse-all ../gen_diagrams.py
+nuitka --recurse-all ../show_invariant_chords.py

@@ -1,0 +1,230 @@
+diff -r 33059c09318b ChordDiagram/BoundaryTracker.py
+--- a/ChordDiagram/BoundaryTracker.py	Thu Mar 12 16:26:28 2015 -0500
++++ b/ChordDiagram/BoundaryTracker.py	Thu Mar 12 18:11:37 2015 -0500
+@@ -177,7 +177,6 @@
+                 (regions, old_region, new_region, old_region))
+ 
+         # Do the actual update
+-        #print "Updating span %s to boundary %s_%s" % (span, sorted(regions)[0], sorted(regions)[1], )
+         self.add(span, regions[0], regions[1])
+ 
+         return regions
+@@ -215,7 +214,6 @@
+            Raises:
+                Exception: No boundary found containing nodes
+         '''
+-        #TODO Remove get_regions_for_node?  With node2=None default, might already work.
+         for name, spans in self.boundaries.iteritems():
+             for span in spans:
+                 if (span.contains_node(node1) and
+@@ -324,7 +322,6 @@
+                      if span.high() <= max_node and span.low() >= 1]
+ 
+         spans.reverse() # Reverse so they'll be used in order added
+-        #print ' '*indent, "(%s) get_spans(%s, max=%s): %s" % (node, node, max_node, spans)
+         return spans
+ 
+     @staticmethod
+@@ -410,10 +407,8 @@
+ 
+         # Verify closed loop of spans for each region, i.e. a closed region
+         for (region, spans) in spans_by_region.iteritems():
+-#             #print "validate_regions_closed: #spans=%s spans=%s" % (len(spans), spans)
+             if region == self.region_factory.get_first_region_id():
+                 continue # Region == outside isn't always closed
+-#             #print "ordered spans:", self.order_spans_in_closed_loop(spans, diagram)
+             if self.order_spans_in_closed_loop(spans, diagram) == None:
+                 return False
+ 
+@@ -442,8 +437,6 @@
+             Raises:
+                 None
+         '''
+-        #print ' '*indent, "-->gen_region_bounds(%s, %s)" % (initial_span, region)
+-
+         # Attempt to close the region starting from each end of the new span
+         for start_node in initial_span:
+             final_chord = Chord([
+@@ -455,14 +448,11 @@
+                 if final_node in initial_span and not chord_forms_loop:
+                     # Skip: 1st and last spans of boundary will not be perpendicular
+                     continue
+-                #print ' '*indent, "gen_region_bounds: START_NODE=%s of %s  FINAL_NODE=%s of %s" % (start_node, initial_span, final_node, final_chord)
+                 for (boundaries, bounding_spans) in self._gen_region_bounds(
+                     start_node, [initial_span], [], locator, new_region,
+                     diagram, max_node, final_node, indent):
+                     yield (boundaries, bounding_spans)
+ 
+-        #print ' '*indent, "<--gen_region_bounds: exit"
+-
+     def _gen_region_bounds(
+             self, node, bounding_spans, visited_nodes, locator, new_region,
+             diagram, max_node, final_node, indent=1):
+@@ -494,8 +484,6 @@
+                indent: Number of spaces to indent debug output to aid in
+                        readability.
+         '''
+-        #print ' '*indent, "-->_gen_region_bounds(node=%s, %s, %s, final_node=%s)" % (node, bounding_spans, visited_nodes, final_node)
+-
+         node_complement = diagram.get_node_complement(node)
+ 
+         region_boundaries = [] # Contains a list of spans for each way to close the region
+@@ -504,22 +492,17 @@
+         spans_to_check = self.get_spans_from_node(
+                                   node, diagram, max_node, turn, indent)
+         for span in spans_to_check:
+-            #print ' '*indent, "(%s) Checking Span%s of %s final_node=%s bound_spans=%s" % (node, span, spans_to_check, final_node, bounding_spans)
+-
+             # Skip duplicate spans
+             if len([s for s in bounding_spans if s.contains_span(span)]) > 0:
+-                #print ' '*indent, "Skip span - It's already in bounding_spans"
+                 continue
+ 
+             # Skip if span is not on desired region
+             if not self.is_span_on_region(locator, span):
+-                #print ' '*indent, "Skip span - Not on region %s" % region
+                 continue
+ 
+             # Does it close the region?
+             if span.last == final_node:
+                 # Yes, it closes the region, validate & bottom out recursion
+-                #print ' '*indent, "Closed region!  Span matches final node %s" % final_node
+                 boundaries_copy = deepcopy(self) # Copy for destructive tests
+                 region_count_before = boundaries_copy.get_region_count()
+ 
+@@ -531,22 +514,17 @@
+ 
+                 # Verify new boundary doesn't reduce the number of regions
+                 if region_count_before != boundaries_copy.get_region_count():
+-                    #print ' '*indent, "  Skipping closed bounds: Reduces region count"
+                     continue
+ 
+                 # Verify all regions remain closed
+                 if not boundaries_copy.validate_all_regions_closed(diagram):
+-                    #print ' '*indent, "  Skipping closed bounds: Not all resulting regions are closed"
+-                    ##print "bad boundaries:", new_boundaries
+                     continue
+ 
+                 region_boundaries = bounding_spans + [span]
+-                #print ' '*indent, "<->_gen_region_bounds(node=%s)" % node # yield:\n%s\n%s" % (node, new_boundaries, region_boundaries)
+                 yield (boundaries_copy, region_boundaries)
+ 
+             else:
+                 # No, using span, search for additional spans to close region
+-                #print ' '*indent, "(%s) Matched: span %s is on region %s" % (node, span, region)
+ 
+                 # Passing thru closing intersection?
+                 # TODO: Does final node code need to change after high level final node backtrack?
+@@ -564,11 +542,8 @@
+                         visited_nodes+[node, node_complement], locator,
+                         new_region, diagram, max_node, new_final_node,
+                         indent+1):
+-                    #print ' '*indent, "<->_gen_region_bounds(node=%s)" % node # yield:\n%s\n%s" % (node, new_boundaries, region_boundaries)
+                     yield (new_boundaries, region_boundaries)
+ 
+-        #print ' '*indent, "<--_gen_region_bounds(node=%s) exit" % node
+-
+     def node_forms_loop(self, node, diagram):
+         '''Return True if the chord containing node forms a closed loop with
+            no other intersections along the loop.  Note that the loop can have
+@@ -610,12 +585,9 @@
+ 
+         '''
+         # Update regions on lowest unused and highest unused nodes
+-#         #print "-->update_dangling"
+-        ##print "initial boundaries:\n", self
+         # Update spans below lowest intersected node
+         base_region = self.get_base_region(diagram)
+         if self.min_node_closed > 1:
+-            #print "dangling: Update boundary %s_%s on span %s (low dangling)" % (base_region, base_region, Span(1, self.min_node_closed))
+             self.add(Span(1, self.min_node_closed), base_region, base_region)
+ 
+         # Update nodes along loop, if any, and connector to next intersection
+@@ -628,11 +600,9 @@
+             # Determine the inside region of the loop
+             # get_regions_for_node returns 2 tuples i.e. 4 values.
+             # For loops 3 values are region outside loop, 1 is the inside region
+-            ##print "regions_for_node(%s)=%s" % (node, self.get_regions_for_node(node))
+             sorted_regions = sorted(
+                 [region for pair in self.get_regions_for_node(node)
+                         for region in pair])
+-            ##print "Searching for inside region.  sorted_regions:", sorted_regions
+             if len(sorted_regions) == 2:
+                 # It's a unit length 1-move, so 2 values in sorted_regions
+                 if sorted_regions[0] == base_region:
+@@ -648,8 +618,6 @@
+             else:
+                 assert False, "Internal error: "\
+                     "Unexpected sorted_regions length: %s" % sorted_regions
+-            ##print "inside_region:", inside_region
+-            #print "dangling: Update boundary %s_%s on span %s (loop)" % (base_region, inside_region, Span(chord))
+             self.add(Span(chord), base_region, inside_region)
+ 
+             # Update connector span from loop to next highest intersection
+@@ -657,15 +625,12 @@
+             while node < diagram.size()*2 and node not in self.intersections:
+                 node += 1
+             connector_span = Span(chord.get_upper_node(), node)
+-            #print "dangling: Update boundary %s_%s on span %s (loop top connector)" % (base_region, base_region, connector_span)
+             self.add(connector_span, base_region, base_region)
+ 
+         # Update spans above highest intersected node
+         high_end_span = Span(self.max_node_closed, diagram.size()*2)
+         if connector_span is None or high_end_span != connector_span:
+-            #print "dangling: Update boundary %s_%s on span %s (high dangling)" % (locator, locator, Span(self.max_node_closed, diagram.size()*2))
+             self.add(high_end_span, locator, locator)
+-        #print "<--update_dangling"
+ 
+     def get_base_region(self, diagram):
+         '''Returns the region containing the lowest nodes that have not
+@@ -680,34 +645,27 @@
+                Assert: Internal error: Wrong number of base regions"
+                Assert: Internal error: Needs investigation.
+         '''
+-#         #print "-->get_base_region"
+         if len(self.intersections) == 0: # No intersections, so return outside
+-#             #print "<--get_base_region: No intersections, returning outside"
+             return self.region_factory.get_first_region_id()
+ 
+         # Find lowest intersection node that is not on a loop containing no
+         #   other intersections
+         diag_max_node = diagram.size()*2
+         node = self.min_node_closed
+-#         #print "min_node_closed:", node
+         while (node < diag_max_node and (node not in self.intersections
+                or self.node_forms_loop(node, diagram))):
+             node += 1
+         # TODO: Does this need to go up to base connector of current sub-diagram
+-        #       to ensure getting the correct base region?  I think so :-(
+-#         #print "Updated node after passing loops and connectors:", node
++        #       to ensure getting the correct base region?
+ 
+         base_regions = {region for pair in self.get_regions_for_node(node)
+                                  for region in pair}
+-#         #print "Regions at node:", base_regions
+         if node == diag_max_node:
+             # Diagram is nothing but a loop
+-#             #print "<--get_base_region: at top node, returning:", [base_regions][0]
+             return base_regions.pop() # Return sole region in set
+ 
+         complement_node = diagram.get_node_complement(node)
+         complement_boundaries = self.get_regions_for_node(complement_node)
+-#         #print "Regions at complement_node:", complement_boundaries
+         complement_regions = {region for pair in complement_boundaries
+                                      for region in pair}
+         if len(complement_boundaries) == 2:  # It's a full crossing
+@@ -723,14 +681,12 @@
+                 "Internal error: Base and complement regions not equal"\
+                 " - verify diagram is valid".format(
+                 base_regions, complement_regions)
+-#             #print "base_regions=%s last_region_closed=%s" % (base_regions, self.last_region_closed)
+             base_regions.remove(self.last_region_closed)
+             assert len(base_regions) == 1, "Wrong number of base regions #2"
+             base_region = base_regions.pop()
+         else:
+             assert False, "Internal error: Needs investigation"
+ 
+-#         #print "<--get_base_region() returning:", base_region
+         return base_region
+ 
+     def __str__(self):
